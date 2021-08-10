@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
+
+  <title>Frontend Mentor | Article preview component</title>
+
+</head>
+
+<body>
+
+  <main>
+
+    <div class="wrapper">
+      <div class="card">
+
+        <div class="card-image">
+          <img id="card-image" src="images/drawers.jpg" alt="drawers" />
+        </div>
+
+        <div class="card-content">
+          <h1> Shift the overall look and feel by adding these wonderful
+            touches to furniture in your home
+          </h1>
+
+          <p id="card-content-paragraph">
+            Ever been in a room and felt like something was missing? Perhaps
+            it felt slightly bare and uninviting. I’ve got some simple tips
+            to help you make any room feel complete.
+          </p>
+
+
+          <div class="card-footer">
+            <div id="footer-profile" class="footer-profile">
+              <img id="card-content-footer-image" src="images/avatar-michelle.jpg" alt="person image" />
+              <div class="profile-description">
+                <p id="profile-name">Michelle Appleton</p>
+                <p id="profile-date">28 Jun 2020</p>
+              </div>
+            </div>
+
+            <div class="share-button-wrapper">
+
+              <div id="share-section" class="share-section">
+                <h4>SHARE</h4>
+                <img class="share-button" id="facebook-icon" src="images/icon-facebook.svg" alt="Share Button" />
+                <img class="share-button" id="twitter-icon" src="images/icon-twitter.svg" alt="Share Button" />
+                <img class="share-button" id="pinterest-icon" src="images/icon-pinterest.svg" alt="Share Button" />
+               
+
+                <div class="triangle"></div>
+              </div>
+
+              <img id="share-button" src="images/icon-share.svg" alt="Share Button" />
+              <img id="mobile-share-button" src="images/icon-share.svg" alt="Share Button Mobile" />
+            </div>
+
+
+
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="mobile-share-button-wrapper">
+
+          <div id="mobile-share-section" class="mobile-share-section">
+
+         
+
+            <div class="mobile-share-section-1">
+            <h4>SHARE</h4>
+            <img id="facebook-icon" src="images/icon-facebook.svg" alt="Share Button" />
+            <img id="twitter-icon" src="images/icon-twitter.svg" alt="Share Button" />
+            <img id="pinterest-icon" src="images/icon-pinterest.svg" alt="Share Button" />
+            
+          	  </div>
+            <div class="mobile-share-section-2">
+            <img id="mobile-share-button-activeState" src="images/icon-share.svg" alt="Share Button" />
+          </div>
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+  </main>
+
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/Basti576">Sebastian</a>.
+    </div>
+
+  </footer>
+
+  <script>
+    window.onload = function () {
+
+      console.log("Dokument geladen");
+
+      let shareButton = document.getElementById("share-button");
+      let mobileShareButton = document.getElementById("mobile-share-button");
+      let mobileShareButtonActive=document.getElementById("mobile-share-button-activeState");
+
+      shareButton.addEventListener("click", displayState);
+      mobileShareButton.addEventListener("click", displayStateMobile);
+      mobileShareButtonActive.addEventListener("click", displayStateMobile);
+    }
+
+    function displayState() {
+      console.log("<- Weiterleitung an Funktion ->");
+
+      let shareSection = document.getElementById("share-section");
+
+      if (shareSection.style.opacity == 0) {
+        shareSection.style.opacity = 1.0;
+      } else {
+        shareSection.style.opacity = 0;
+      }
+
+
+
+    }
+
+function displayStateMobile(){
+      console.log("<- Weiterleitung an Funktion ->");
+
+let shareSectionMobile = document.getElementById("mobile-share-section");
+let mobileShareButton = document.getElementById("mobile-share-button");
+if (shareSectionMobile.style.opacity == 0) {
+  shareSectionMobile.style.zIndex=+999;
+  shareSectionMobile.style.opacity = 1.0;
+  
+} else {
+  document.getElementById("footer-profile").style.display="flex";
+  shareSectionMobile.style.zIndex=-999;
+  shareSectionMobile.style.opacity = 0;
+ 
+}
+    }
+
+  </script>
+
+
+
+
+</body>
+
+</html>
