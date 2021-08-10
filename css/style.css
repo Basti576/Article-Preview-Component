@@ -70,15 +70,14 @@ main {
 
 .card-content {
     grid-area: content;
-
     color: hsl(217, 19%, 35%);
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-content: flex-start;
     width: 80%;
-    margin: auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .card-content>* {
